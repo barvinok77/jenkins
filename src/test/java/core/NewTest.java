@@ -16,7 +16,7 @@ public class NewTest {
 				+ Anagram.validate("The Hurricanes", "These churn air"));
 	} // method (test)
 
-	@Test
+	@Test(enabled = false)
 	public void test3() {
 		org.testng.Assert.assertTrue(Anagram.validate("Охренеть", "Не хрена себе"), "Error message");
 		System.out.println("Охренеть and Не хрена себе is anagram? - " + Anagram.validate("Охренеть", "Не хрена себе"));
