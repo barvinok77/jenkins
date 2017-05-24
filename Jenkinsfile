@@ -5,8 +5,8 @@ git 'https://github.com/khatilov/jenkins.git'
 mvnHome = tool 'Maven_3.5.0'
 }
 stage('Maven') {
-if (isUnix())  				{sh "'${mvnHome}/bin/mvn' clean compile findbugs:findbugs pmd:pmd pmd:cpd checkstyle:checkstyle"}
-else 		  				{bat(/"${mvnHome}\bin\mvn" clean compile pmd:pmd pmd:cpd findbugs:findbugs checkstyle:checkstyle/)}
+if (isUnix())  				{sh "'${mvnHome}/bin/mvn' clean test findbugs:findbugs pmd:pmd pmd:cpd checkstyle:checkstyle"}
+else 		  				{bat(/"${mvnHome}\bin\mvn" clean test pmd:pmd pmd:cpd findbugs:findbugs checkstyle:checkstyle/)}
                }
 stage('PMD') 				{step([$class: 'PmdPublisher', pattern: '**/pmd*.xml'])}
 stage('CheckStyle')			{step([$class: 'CheckStylePublisher', pattern: '**/checkstyle*.xml'])}
