@@ -4,7 +4,7 @@ public class App {
 
 
 	/** The check str value. */
-	private String2 checkStrValue = null;
+	private String checkStrValue = null;
 
 	/**
 		 * The Constructor.
