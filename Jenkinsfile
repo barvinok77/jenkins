@@ -1,8 +1,8 @@
 node {
 def mvnHome
 stage('Git') {
-git 'https://github.com/khatilov/jenkins.git'
-mvnHome = tool 'Maven_3.5.0'
+git 'https://github.com/barvinok77/jenkins.git'
+mvnHome = tool 'Maven_3.3.9'
 }
 stage('Maven') {
 if (isUnix())  				{sh "'${mvnHome}/bin/mvn' clean findbugs:findbugs pmd:pmd pmd:cpd checkstyle:checkstyle test -Dmaven.test.failure.ignore=true"}
